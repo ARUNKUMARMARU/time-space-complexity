@@ -1,0 +1,103 @@
+1) Explain the concept of prime numbers and write a function to check if a given number is prime.
+
+Ans:
+
+Prime numbers are natural numbers greater than 1 that have only two positive divisors: 1 and themselves. In other words, a prime number is a number that cannot be formed by multiplying two smaller natural numbers.
+
+function isPrime(number) {    
+    if (number < 2) {
+        return false;
+    }
+
+    for (let i = 2; i <= number; i++) {
+        if (number % i === 0) {            
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+console.log(isPrime(7)); // Output: true
+console.log(isPrime(15)); // Output: false
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+2) Write a function to find the largest element in an array.
+
+ Ans:
+
+function largestNumber(arr){
+    const largeNum = arr[0];
+    for(var i=1; i<arr.length; i++){
+        if(arr[i]>largeNum){
+            largeNum = arr[i]
+        }
+    }
+    return largeNum;
+}
+console.log(largestNumber([2,3,1,6,5]));
+
+------------------------------------------------------------------------------------------------------------------------------------------
+   
+3) Write a function to find the second largest element in an array.
+
+ Ans:
+
+ function largestNumber(arr){
+    var largeNum = arr[0];
+    var secondLargeNum = 0;
+
+    for(var i=1; i<arr.length; i++){
+        if(arr[i]>largeNum){
+            secondLargeNum = largeNum
+            largeNum = arr[i]
+        }else if(arr[i]>secondLargeNum && arr[i]!==largeNum){
+            secondLargeNum = arr[i];
+        }
+       
+    }
+    return secondLargeNum;
+}
+console.log(largestNumber([2,3,1,6,5]));
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+4) Write a function to find the nth Fibonacci number using iteration.
+
+ Ans:
+
+ function fibonacci (n){
+    var fib1 = 1;
+    var fib2 = 1;
+    var fibonacciNum = 0;
+    for(var i=3; i<=n; i++){
+        fibonacciNum = fib1+fib2;
+        fib1 = fib2;
+        fib2 = fibonacciNum
+    }
+    return fibonacciNum;
+ }
+
+ console.log(fibonacci(6));
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+5) Write a function to calculate the factorial of a number using iteration.
+
+Ans:
+
+function factorial(n){
+    var num1 = 1;    
+    var fact = 0;
+
+    for(var i=2; i<=n; i++){       
+        fact = num1 * i;
+        num1 = fact;        
+    }
+    return fact;
+}
+console.log(factorial(3));
+
+------------------------------------------------------------------------------------------------------------------------------------------
